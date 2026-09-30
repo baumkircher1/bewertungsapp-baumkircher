@@ -36,9 +36,9 @@ Eigene `config/config.json` lokal aus `config/config.example.json` ableiten, nic
 
 ## Einheit 3: Assoziationen und weitere Modelle
 
-- [ ] Alle Modelle (Team, Member, Project, Criterion, Juror, Evaluation) mit ausgefüllten `associate`-Methoden
-- [ ] Unique-Constraint auf (projectId, criterionId, jurorId) bei Evaluation
-- [ ] Mindestens ein Seeder mit Testdaten
+- [x] Alle Modelle (Team, Member, Project, Criterion, Juror, Evaluation) mit ausgefüllten `associate`-Methoden
+- [x] Unique-Constraint auf (projectId, criterionId, jurorId) bei Evaluation
+- [x] Mindestens ein Seeder mit Testdaten
 
 ## Einheit 4: Backend-Routen
 

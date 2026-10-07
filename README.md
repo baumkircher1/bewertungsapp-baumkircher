@@ -72,6 +72,17 @@ Eigene `config/config.json` lokal aus `config/config.example.json` ableiten, nic
 | Methode | Pfad | Body | Rückgabe |
 |---|---|---|---|
 | GET | /teams | – | Liste aller Teams |
+| GET | /teams/:id | – | Ein Team inkl. Members und Projects, 404 wenn nicht gefunden |
+| POST | /teams | `{ name, klasse }` | 201 mit neuem Team, 400 wenn Pflichtfeld fehlt |
+| PUT | /teams/:id | `{ name?, klasse? }` | Aktualisiertes Team, 404 wenn nicht gefunden |
+| DELETE | /teams/:id | – | 204, 404 wenn nicht gefunden |
+| GET | /projects | – | Liste aller Projekte inkl. Team |
+| GET | /projects/:id | – | Ein Projekt inkl. Team, 404 wenn nicht gefunden |
+| POST | /projects | `{ teamId, titel, beschreibung?, praesentiertAm? }` | 201 mit neuem Projekt, 400 wenn Pflichtfeld fehlt, 404 wenn Team nicht existiert |
+| PUT | /projects/:id | `{ teamId?, titel?, beschreibung?, praesentiertAm? }` | Aktualisiertes Projekt, 404 wenn Projekt oder Team nicht gefunden |
+| DELETE | /projects/:id | – | 204, 404 wenn nicht gefunden |
+| GET | /projects/:id/durchschnitt | – | Durchschnitt der Punktzahl pro Kriterium, 404 wenn Projekt nicht gefunden |
+| POST | /evaluations | `{ projectId, criterionId, jurorId, score, comment? }` | 201 mit neuer Bewertung, 400 bei fehlendem Pflichtfeld oder ungültigem score, 404 wenn Projekt/Kriterium/Juror nicht existiert, 409 wenn Bewertung schon existiert |
 
 ## Bekannte Einschränkungen
 
